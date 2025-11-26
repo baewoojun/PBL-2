@@ -8,13 +8,13 @@ import java.util.TreeSet;
 public class BookDB
 {
     private TreeSet<Book> bookDB;
-    
+    private Book bookObject;
     public BookDB(){
         bookDB = new TreeSet<>();
         
     }
     
-    public String addBook (Book b){
+    public String addBook(Book b){
     
     }
     
@@ -22,7 +22,7 @@ public class BookDB
     
     }
     
-    public Book findBook(String title, String author){
+    public Book findBook(String UCNum){
     
     }
     

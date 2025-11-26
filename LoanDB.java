@@ -8,6 +8,7 @@ import java.util.HashSet;
 public class LoanDB
 {
     private HashSet<Loan> loanDB;
+    private Loan loanObject;
     public LoanDB(){
         loanDB = new HashSet<>();
     }
