@@ -13,10 +13,10 @@ public class LoanDB
     }
     
     public String addLoan(Loan l){
-    
+        boolean add = LoanDB();
     }
     
     public String deleteLoan(){
-    
+        boolean remove = LoanDB();
     }
 }
