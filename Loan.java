@@ -16,4 +16,8 @@ public class Loan
     public void unLinkLoan(){
     
     }
+    
+    public String deleteLoan(){
+        
+    }
 }

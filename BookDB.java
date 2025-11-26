@@ -22,11 +22,11 @@ public class BookDB
     
     }
     
-    public Book FindBook(String title, String author){
+    public Book findBook(String title, String author){
     
     }
     
-    public String deleteBook (Book b){
+    public String deleteBook(Book b){
     
     }
 }

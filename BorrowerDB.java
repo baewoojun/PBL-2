@@ -7,6 +7,7 @@ import java.util.TreeSet;
  */
 public class BorrowerDB{
     private TreeSet<Borrower> borrowerDB;
+    private Borrower borrowerObject;
     public BorrowerDB(){
         borrowerDB = new TreeSet<>();
         

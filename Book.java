@@ -17,10 +17,11 @@ public class Book
         this.title = title;
         this.author = author;
         this.UCNum = UCNum;
+        
     }
     
     public boolean check(){
-    
+        
     }
     
     public void display(){
