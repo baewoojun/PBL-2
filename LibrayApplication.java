@@ -11,7 +11,6 @@ public class LibrayApplication {
     private LoanDB loanCollection;
     private BookDB bookCollection;
 
-
     public LibrayApplication(String name) {
         this.name = name;
         this.borrowerCollection = new BorrowerDB();
@@ -34,18 +33,16 @@ public class LibrayApplication {
 
     }
 
-    public void lendOneBook(String title, String author,
-                            String name, String email) {
+    public void lendOneBook(String UCNum,String name, String email) {
 
     }
 
-    public void returnOneBook(String title, String author,
-                              String name, String email) {
+    public void returnOneBook(String UCNum,String name, String email) {
         
     }
 
     public String createUCNum() {
-
+        
     }
 
     public String deleteOneBook(String title, String author) {

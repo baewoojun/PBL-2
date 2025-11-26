@@ -12,11 +12,12 @@ public class BorrowerDB{
         borrowerDB = new TreeSet<>();
         
     }
-    public String addBorrower(Borrower u){
     
+    public String addBorrower(Borrower u){
+        boolean add = borrowerDB(u);
     }
     
-    public Book FindBorrower(String name, String email){
+    public Book findBorrower(String name, String email){
     
     }
 }

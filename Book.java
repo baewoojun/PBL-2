@@ -5,7 +5,6 @@
  * @author (작성자 이름)
  * @version (버전 번호 또는 작성한 날짜)
  */
-// BlueJ 실행 되는지 확인
 public class Book
 {
     private String title;
