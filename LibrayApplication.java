@@ -7,16 +7,8 @@
  */
 public class LibrayApplication {
     private String name;
-    private BorrowerDB borrowerCollection;
-    private LoanDB loanCollection;
-    private BookDB bookCollection;
-
-
     public LibrayApplication(String name) {
         this.name = name;
-        this.borrowerCollection = new BorrowerDB();
-        this.loanCollection = new LoanDB();
-        this.bookCollection = new BookDB();
     }
     
     public String registerOneBorrower(String name, String email) {
@@ -34,13 +26,11 @@ public class LibrayApplication {
 
     }
 
-    public void lendOneBook(String title, String author,
-                            String name, String email) {
+    public void lendOneBook(String UCNum,String name, String email) {
 
     }
 
-    public void returnOneBook(String title, String author,
-                              String name, String email) {
+    public void returnOneBook(String UCNum,String name, String email) {
         
     }
 
