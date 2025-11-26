@@ -13,7 +13,7 @@ public class BorrowerDB{
     }
     
     public String addBorrower(Borrower u){
-    
+        boolean add = borrowerDB(u);
     }
     
     public Book findBorrower(String name, String email){

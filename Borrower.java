@@ -8,11 +8,11 @@
 public class BorrowerDB{
     private String name;
     private String email;
-    private Loan loanInfo;
+    private Loan loanInformation;
     
     public Borrower(String name, String email){
-        this.name = name;
-        this.email = email;
+        this.name = name;//미 대출 상태
+        this.email = email;// 고유 email 생성
         
     }
     
