@@ -7,8 +7,15 @@
  */
 public class LibrayApplication {
     private String name;
+    private BorrowerDB borrowerCollection;
+    private LoanDB loanCollection;
+    private BookDB bookCollection;
+
     public LibrayApplication(String name) {
         this.name = name;
+        this.borrowerCollection = new BorrowerDB();
+        this.loanCollection = new LoanDB();
+        this.bookCollection = new BookDB();
     }
     
     public String registerOneBorrower(String name, String email) {
@@ -35,7 +42,7 @@ public class LibrayApplication {
     }
 
     public String createUCNum() {
-
+        
     }
 
     public String deleteOneBook(String title, String author) {
