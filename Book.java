@@ -23,7 +23,7 @@ public class Book
         
     }
     
-    public void display(){
+    public String display(){
     
     }
     

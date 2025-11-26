@@ -17,7 +17,4 @@ public class Loan
     
     }
     
-    public String deleteLoan(){
-        
-    }
 }

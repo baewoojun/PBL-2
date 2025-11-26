@@ -18,34 +18,39 @@ public class LibrayApplication {
         this.bookCollection = new BookDB();
     }
     
-    public String registerOneBorrower(String name, String email) {
-    }
-
-    public String registerOneBook(String title, String author) {
-
-    }
-
-    public void displayBooksForLoan() {
-
-    }
-
-    public void displayBooksOnLoan() {
-
-    }
-
-    public void lendOneBook(String UCNum,String name, String email) {
-
-    }
-
-    public void returnOneBook(String UCNum,String name, String email) {
+    public String registerOneBorrower(String name, String email){
         
     }
 
-    public String createUCNum() {
+    public String registerOneBook(String title, String author){
+
+    }
+
+    public void displayBooksForLoan(){
+
+    }
+
+    public void displayBooksOnLoan(){
+
+    }
+
+    public String lendOneBook(String UCNum,String name, String email){
+
+    }
+
+    public String returnOneBook(String UCNum,String name, String email){
         
     }
 
-    public String deleteOneBook(String title, String author) {
+    public String createUCNum(){
+        
+    }
+    
+    public String deleteOneBorrower(String name, String email){
+        
+    }
+
+    public String deleteOneBook(String title, String author){
 
     }
 }
