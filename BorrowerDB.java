@@ -16,7 +16,7 @@ public class BorrowerDB{
     
     }
     
-    public Book FindBorrower(String name, String email){
+    public Book findBorrower(String name, String email){
     
     }
 }
