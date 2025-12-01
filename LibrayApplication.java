@@ -20,14 +20,15 @@ public class LibrayApplication {
     
     public String registerOneBorrower(String name, String email){
         Borrower borrower = new Borrower(name, email);
-        BorrowerDB.add(borrower);
-        return "이용자 등록 완료";
+        String saveIF = borrowerCollection.addBorrower(borrower);
+        return saveIF;
     }
 
     public String registerOneBook(String title, String author){
-        BookDB book = new Book(title, author);
-        BookDB.add(book);
-        return "책 1권 등록 완료";
+        String UCNum = createUCNum();
+        Book book = new Book(title, author, UCNum);
+        String saveIF = bookCollection.addBook(book);
+        return saveIF;
     }
 
     public void displayBooksForLoan(){
