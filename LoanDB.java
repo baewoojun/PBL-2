@@ -8,15 +8,16 @@ import java.util.HashSet;
 public class LoanDB
 {
     private HashSet<Loan> loanDB;
+    private Loan loanObject;
     public LoanDB(){
         loanDB = new HashSet<>();
     }
     
     public String addLoan(Loan l){
-    
+        boolean add = LoanDB();
     }
     
     public String deleteLoan(){
-    
+        boolean remove = LoanDB();
     }
 }

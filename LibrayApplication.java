@@ -20,33 +20,50 @@ public class LibrayApplication {
     
     public String registerOneBorrower(String name, String email) {
 
+    public String registerOneBorrower(String name, String email){
+        Borrower borrower = new Borrower(name, email);
+        BorrowerDB.add(borrower);
+        return "이용자 등록 완료";
     }
 
-    public String registerOneBook(String title, String author) {
+    public String registerOneBook(String title, String author){
+        BookDB book = new Book(title, author);
+        BookDB.add(book);
+        return "책 1권 등록 완료";
+    }
+
+    public void displayBooksForLoan(){
+        while(모든 책 출력 완료 !=true){
+            //BookDB에게 책 1권을 가져온다
+            Book book = BookDB.get();
+            if(book == 대출가능(수정해야함)){
+                //책의 정보를 화면에 출력
+                book.display();
+            }
+        }
+    }
+
+    public void displayBooksOnLoan(){
 
     }
 
-    public void displayBooksForLoan() {
+    public String lendOneBook(String UCNum,String name, String email){
 
     }
 
-    public void displayBooksOnLoan() {
-
-    }
-
-    public void lendOneBook(String UCNum,String name, String email) {
-
-    }
-
-    public void returnOneBook(String UCNum,String name, String email) {
+    public String returnOneBook(String UCNum,String name, String email){
         
     }
 
-    public String createUCNum() {
+    public String createUCNum(){
+        
+    }
+    
+    public String deleteOneBorrower(String name, String email){
         
     }
 
-    public String deleteOneBook(String title, String author) {
+    public String deleteOneBook(String title, String author){
 
     }
 }
