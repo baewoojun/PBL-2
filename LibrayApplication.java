@@ -18,8 +18,8 @@ public class LibrayApplication {
         this.bookCollection = new BookDB();
     }
     
-    public String registerOneBorrower(String name, String email) {
 
+    public String registerOneBorrower(String name, String email) {
     public String registerOneBorrower(String name, String email){
         Borrower borrower = new Borrower(name, email);
         BorrowerDB.add(borrower);
