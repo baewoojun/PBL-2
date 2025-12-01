@@ -42,11 +42,29 @@ public class LibrayApplication {
     }
 
     public void displayBooksOnLoan(){
-
+        while(){
+            //BookDB에게 책 1권을 가져온다
+            Book book = BookDB.get();
+            if(book == 대출가능(수정해야함)){
+                //책의 정보를 화면에 출력
+                book.display();
+            }
+        }
     }
 
     public String lendOneBook(String UCNum,String name, String email){
-
+        Book book = BookDB.findBook(UCNum, name, email);
+        if(book==null){
+            return "책 찾기 실패";
+        }
+        
+        else(){
+            return "책 찾기 성공";
+        }
+        
+        
+        Loan loan = new Loan(Book,Borrower);
+        return loanDB.addLoan(loan);
     }
 
     public String returnOneBook(String UCNum,String name, String email){
