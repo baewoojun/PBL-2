@@ -15,7 +15,12 @@ public class BookDB
     }
     
     public String addBook(Book b){
-    
+        if(bookDB.add(b)){
+            return "등록이 완료되었습니다." + b.toString();
+        }
+        else{
+            return "이미 등록된 책입니다.";
+        }
     }
     
     public Book findBook(){
