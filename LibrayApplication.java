@@ -64,7 +64,7 @@ public class LibrayApplication {
         
         
         Loan loan = new Loan(Book,Borrower);
-        return loanDB.addLoan(loan);
+        retun loanDB.addLoan(loan);
     }
 
     public String returnOneBook(String UCNum,String name, String email){
