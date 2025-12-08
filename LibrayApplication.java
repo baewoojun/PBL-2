@@ -37,7 +37,7 @@ public class LibrayApplication {
         
         System.out.println("===대출 가능 도서 목록 ==");
         while(it.hasNext()){
-            Book book = BookDB.get();
+            Book book = (Bookit.next());
             if(book.check() == true){
                 System.out.println(book.display());
             }
@@ -49,7 +49,7 @@ public class LibrayApplication {
         
         System.out.println("===대출 중 도서 목록 ==");
         while(it.hasNext()){
-            Book book = BookDB.get();
+            Book book = Bookit.next();
             if(book.check() == false){
                 System.out.println(book.display());
             }
