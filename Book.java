@@ -1,11 +1,11 @@
-
+ import java.util.*;
 /**
  * Book 클래스의 설명을 작성하세요.
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2022320014_정재헌, 2022320035_배우준, 20220320018_이성민)
+ * @version (2025.12.08)
  */
-public class Book
+public class Book implements Comparable<Book>
 {
     private String title;
     private String author;
@@ -20,11 +20,21 @@ public class Book
     }
     
     public boolean check(){
-        
+        if(this.loan == null){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
     public String display(){
+        return "제목: " + title + ", 저자: " + author + ", 등록번호: " + UCNum;
+    }
     
+    @Override
+    public int compareTo(Book other) {
+        return this.title.compareTo(other.title);
     }
     
     public void delete(){

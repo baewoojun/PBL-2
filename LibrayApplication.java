@@ -2,8 +2,8 @@
 /**
  * LibraryApplication 클래스의 설명을 작성하세요.
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2022320014_정재헌, 2022320035_배우준, 20220320018_이성민)
+ * @version (2025.12.08)
  */
 public class LibrayApplication {
     private String name;
