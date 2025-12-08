@@ -98,7 +98,8 @@ public class LibrayApplication {
     }
     
     public String deleteOneBorrower(String name, String email){
-        
+        Borrower borrower = borrowerCollection.findBorrower(name, email);
+        borrower.searchLoan();
     }
 
     public String deleteOneBook(String title, String author){

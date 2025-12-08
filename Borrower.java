@@ -34,6 +34,15 @@ public class Borrower implements Comparable<Borrower>
         return null;
     }
     
+    public Loan searchLoan(){
+        for (Loan loan : loanInfo) {
+            if (loan != null) {
+                return loan;
+            }
+        }
+        return null;
+    }
+    
     public String getID(){
         return this.email;
     }
