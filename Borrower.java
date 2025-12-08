@@ -16,8 +16,8 @@ public class Borrower{
     }
     
     public boolean check(){
-        
-    }
+    
+    } 
     
     public Loan searchLoan(){
         
