@@ -21,15 +21,15 @@ public class BookDB
         // else{
             // return "이미 등록된 책입니다.";
         // }
-        Iterator<Book> it = bookDB.Iterator();
+        Iterator<Book> it = bookDB.iterator();
         while(it.hasNext()){
-            Book book = BookDB.get();
-            if(book.check() == false){
+            Book book = it.next();
+            if(book.equals(b)){
                 return "이미 등록된 책입니다.";
             }
         }
-        저장ㅁㅅㄷ
-        ㄷㄹ요
+        bookDB.add(b);
+        return "책이 등록 완료 되었습니다.";
     }
     
     public Iterator<Book> getIterator(){
