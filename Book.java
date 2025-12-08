@@ -32,10 +32,6 @@ public class Book implements Comparable<Book>
         return "제목: " + title + ", 저자: " + author + ", 등록번호: " + UCNum;
     }
     
-    public int compareTo(Book other) {
-        return this.UCNum.compareTo(other.UCNum);
-    }
-    
     public String getID(){
         return this.UCNum;
     }
@@ -45,13 +41,16 @@ public class Book implements Comparable<Book>
     }
     
     public void delete(){
-        
+        this.loan = null;
     }
     
     public void setLoan(Loan loan){
         this.loan = loan;
     }
     
+    public int compareTo(Book other) {
+        return this.UCNum.compareTo(other.UCNum);
+    }
     // public int compareTo(Book book1){
         // return Integer.parseInt(this.UCNum) - Integer.parseInt(book1.UCNum);
     // }

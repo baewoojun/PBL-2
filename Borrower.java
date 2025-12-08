@@ -25,8 +25,13 @@ public class Borrower implements Comparable<Borrower>
         }
     }
     
-    public Loan searchLoan(){
-        
+    public Loan searchLoan(String bookID){
+        for (Loan loan : loanInfo) {
+            if (loan != null && loan.getBookID().equals(bookID)) {
+                return loan;
+            }
+        }
+        return null;
     }
     
     public String getID(){
@@ -42,8 +47,13 @@ public class Borrower implements Comparable<Borrower>
         }
     }
         
-    public void delete(){
-        
+    public void delete(Loan loan){
+        for(int i = 0; i < loanInfo.length; i++){
+            if (loanInfo[i].equals(loan)){
+                loanInfo[i] = null;
+                return;
+            }
+        }
     }
     
     public int compareTo(Borrower other) {

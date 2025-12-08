@@ -14,10 +14,20 @@ public class LoanDB
     }
     
     public String addLoan(Loan l){
-        boolean add = LoanDB();
+        if(loanDB.add(l)){
+            return "대출 완료.";
+        }
+        else{
+            return "이미 대출된 책과 이용자 입니다.";
+        }
     }
     
-    public String deleteLoan(){
-        boolean remove = LoanDB();
+    public String deleteLoan(Loan l){
+        if(loanDB.remove(l)){
+            return "반납 완료.";
+        }
+        else{
+            return "이미 반납된 책과 이용자 입니다.";
+        }
     }
 }

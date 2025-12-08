@@ -18,8 +18,13 @@ public class Loan
         u.setLoan(this);
     }
     
+    public String getBookID(){
+        return loanedBook.getID();
+    }
+    
     public void unLinkLoan(){
         
     }
+    
     
 }
