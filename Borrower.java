@@ -33,7 +33,7 @@ public class Borrower implements Comparable<Borrower>
         }
         return null;
     }
-    
+    //클래스 다이어그램에 추가
     public String getID(){
         return this.email;
     }
