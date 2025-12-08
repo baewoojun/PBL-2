@@ -38,6 +38,14 @@ public class Book implements Comparable<Book>
     }
     
     public void delete(){
+        
+    }
     
+    public void setLoan(Loan loan){
+        this.loan = loan;
+    }
+    
+    public int compareTo(Book book1){
+        return Integer.parseInt(this.UCNum) - Integer.parseInt(book1.UCNum);
     }
 }

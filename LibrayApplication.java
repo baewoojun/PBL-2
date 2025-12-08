@@ -10,6 +10,8 @@ public class LibrayApplication {
     private BorrowerDB borrowerCollection;
     private LoanDB loanCollection;
     private BookDB bookCollection;
+    private int Num;
+    private String UCNum;
 
     public LibrayApplication(String name) {
         this.name = name;
@@ -20,6 +22,9 @@ public class LibrayApplication {
     
 
     public String registerOneBorrower(String name, String email){
+        if(findBorrower(name, email).eqauls()){
+            
+        }
         Borrower borrower = new Borrower(name, email);
         String saveIF = borrowerCollection.addBorrower(borrower);
         return saveIF;
@@ -29,7 +34,7 @@ public class LibrayApplication {
         String UCNum = createUCNum();
         Book book = new Book(title, author, UCNum);
         String saveIF = bookCollection.addBook(book);
-        return saveIF;
+        return saveIF + UCNum;
     }
 
     public void displayBooksForLoan(){
@@ -57,17 +62,18 @@ public class LibrayApplication {
     }
 
     public String lendOneBook(String UCNum,String name, String email){
-        Book book = BookDB.findBook(UCNum, name, email);
-        if(book==null){
-            return "책 찾기 실패";
+        Book book = BookCollection.findBook(UCNum);
+        Borrower borrower = BorrowerCollection.findBook(name, email);
+        if(book == null){
+            return "해당 책을 찾을 수 없습니다.";
+        }
+        Borrower borrower = BorrowerCollection.findBook(name, email);
+        if(borrower == null){
+            return "해당 이용자를 찾을 수 없습니다";
         }
         
-        else(){
-            return "책 찾기 성공";
-        }
         
-        
-        Loan loan = new Loan(Book,Borrower);
+        Loan loan = new Loan(book,borrower);
         return loanDB.addLoan(loan);
     }
 
@@ -76,7 +82,9 @@ public class LibrayApplication {
     }
 
     public String createUCNum(){
-        
+        this.Num += 1;
+        this.UCNum = "B" + Num;
+        return this.UCNum;
     }
     
     public String deleteOneBorrower(String name, String email){
@@ -84,6 +92,6 @@ public class LibrayApplication {
     }
 
     public String deleteOneBook(String title, String author){
-
+        
     }
 }

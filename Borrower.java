@@ -19,6 +19,14 @@ public class Borrower{
     
     } 
     
+    public Loan searchLoan(){
+        
+    }
+    
+    public void setLoan(Loan loan){
+        this.loanInfo.add(loan);
+    }
+        
     public void delete(){
         
     }
