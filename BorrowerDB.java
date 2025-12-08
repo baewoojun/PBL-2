@@ -15,7 +15,7 @@ public class BorrowerDB{
     
     public String addBorrower(Borrower u){
         if(borrowerDB.add(u)){
-            return "등록이 완료되었습니다." + u.toString();
+            return "이용자 등록이 완료되었습니다.";
         }
         else{
             return "이미 등록된 사용자 입니다.";
@@ -23,7 +23,7 @@ public class BorrowerDB{
     }
     
     public Book findBorrower(String name, String email){
-    
+        
     }
     
     public String deleteBorrower(Borrower u){

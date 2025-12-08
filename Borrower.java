@@ -16,9 +16,17 @@ public class Borrower{
     }
     
     public boolean check(){
-    
+        
     }
     
+    public Loan searchLoan(){
+        
+    }
+    
+    public void setLoan(Loan loan){
+        this.loanInfo.add(loan);
+    }
+        
     public void delete(){
         
     }

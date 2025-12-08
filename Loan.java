@@ -9,12 +9,18 @@ public class Loan
 {
     private Book loanedBook;
     private Borrower borrower;
+    public static int loanState =0;
+    
     public Loan(Book b, Borrower u){
         this.loanedBook = b;
         this.borrower = u;
+        b.setLoan(this);
+        u.set
+        loanState =0;
     }
-    public void unLinkLoan(){
     
+    public void unLinkLoan(){
+        
     }
     
 }
