@@ -51,7 +51,7 @@ public class LibrayApplication {
         
         System.out.println("===대출 가능 도서 목록 ==");
         while(it.hasNext()){
-            Book book = BookDB.get();
+            Book book = (it.next());
             if(book.check() == true){
                 System.out.println(book.display());
             }
@@ -63,7 +63,7 @@ public class LibrayApplication {
         
         System.out.println("===대출 중 도서 목록 ==");
         while(it.hasNext()){
-            Book book = BookDB.get();
+            Book book = it.next();
             if(book.check() == false){
                 System.out.println(book.display());
             }
@@ -80,8 +80,9 @@ public class LibrayApplication {
         if(borrower == null){
             return "해당 이용자를 찾을 수 없습니다";
         }
-        
-        
+        Loan loan = new Loan(Book,Borrower);
+        retun loanDB.addLoan(loan);
+
         Loan loan = new Loan(book,borrower);
         return loanDB.addLoan(loan);
     }
