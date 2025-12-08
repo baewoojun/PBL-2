@@ -10,7 +10,7 @@ public class BookDB
     private TreeSet<Book> bookDB;
     private Book bookObject;
     public BookDB(){
-        bookDB = new TreeSet<>();
+         bookDB = new TreeSet<>();
         
     }
     
@@ -23,8 +23,11 @@ public class BookDB
         }
     }
     
+    public Iterator<Book> getIterator(){
+        return bookDB.iterator();
+    }
     public Book findBook(){
-    
+        return null;
     }
     
     public Book findBook(String UCNum){

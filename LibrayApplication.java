@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * LibraryApplication 클래스의 설명을 작성하세요.
  *
@@ -33,23 +33,25 @@ public class LibrayApplication {
     }
 
     public void displayBooksForLoan(){
-        while(모든 책 출력 완료 !=true){
-            //BookDB에게 책 1권을 가져온다
+        Iterator<Book> it = bookCollection.getIterator();
+        
+        System.out.println("===대출 가능 도서 목록 ==");
+        while(it.hasNext()){
             Book book = BookDB.get();
-            if(book == 대출가능(수정해야함)){
-                //책의 정보를 화면에 출력
-                book.display();
+            if(book.check() == true){
+                System.out.println(book.display());
             }
         }
     }
 
     public void displayBooksOnLoan(){
-        while(){
-            //BookDB에게 책 1권을 가져온다
+        Iterator<Book> it = bookCollection.getIterator();
+        
+        System.out.println("===대출 중 도서 목록 ==");
+        while(it.hasNext()){
             Book book = BookDB.get();
-            if(book == 대출가능(수정해야함)){
-                //책의 정보를 화면에 출력
-                book.display();
+            if(book.check() == false){
+                System.out.println(book.display());
             }
         }
     }
