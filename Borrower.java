@@ -17,14 +17,23 @@ public class Borrower{
     
     public boolean check(){
     
-    } 
+    }
     
     public Loan searchLoan(){
         
     }
     
+    public String getID(){
+        return this.email;
+    }
+    
     public void setLoan(Loan loan){
-        this.loanInfo.add(loan);
+        for (int i = 0; i < loanInfo.length; i++) {
+            if (loanInfo[i] == null) {
+                loanInfo[i] = loan;
+                return;
+            }
+        }
     }
         
     public void delete(){

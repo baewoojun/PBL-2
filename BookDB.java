@@ -15,12 +15,21 @@ public class BookDB
     }
     
     public String addBook(Book b){
-        if(bookDB.add(b)){
-            return "책 등록이 완료되었습니다.";
+        // if(bookDB.add(b)){
+            // return "책 등록이 완료되었습니다.";
+        // }
+        // else{
+            // return "이미 등록된 책입니다.";
+        // }
+        Iterator<Book> it = bookDB.Iterator();
+        while(it.hasNext()){
+            Book book = BookDB.get();
+            if(book.check() == false){
+                return "이미 등록된 책입니다.";
+            }
         }
-        else{
-            return "이미 등록된 책입니다.";
-        }
+        저장ㅁㅅㄷ
+        ㄷㄹ요
     }
     
     public Iterator<Book> getIterator(){
@@ -31,7 +40,14 @@ public class BookDB
     }
     
     public Book findBook(String UCNum){
-    
+        Iterator<Book> it = bookDB.iterator();
+        while(it.hasNext()){
+            Book book = it.next();
+            if(book.getID().equals(UCNum)){
+                return book;
+            }
+        }
+        return null;
     }
     
     public String deleteBook(Book b){

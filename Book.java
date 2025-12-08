@@ -37,6 +37,10 @@ public class Book implements Comparable<Book>
         return this.title.compareTo(other.title);
     }
     
+    public String getID(){
+        return this.UCNum;
+    }
+    
     public void delete(){
         
     }
