@@ -2,8 +2,8 @@ import java.util.TreeSet;
 /**
  * BorrowerDB 클래스의 설명을 작성하세요.
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2022320014_정재헌, 2022320035_배우준, 20220320018_이성민)
+ * @version (2025.12.08)
  */
 public class BorrowerDB{
     private TreeSet<Borrower> borrowerDB;
@@ -14,11 +14,16 @@ public class BorrowerDB{
     }
     
     public String addBorrower(Borrower u){
-        
+        if(borrowerDB.add(u)){
+            return "이용자 등록이 완료되었습니다.";
+        }
+        else{
+            return "이미 등록된 사용자 입니다.";
+        }
     }
     
     public Book findBorrower(String name, String email){
-    
+        
     }
     
     public String deleteBorrower(Borrower u){
