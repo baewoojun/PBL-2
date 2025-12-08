@@ -74,9 +74,12 @@ public class LibrayApplication {
         
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         Loan loan = new Loan(Book,Borrower);
         retun loanDB.addLoan(loan);
 =======
+=======
+>>>>>>> c33c44839028203a4310b512ce3894dc5362864c
         Loan loan = new Loan(book,borrower);
         return loanDB.addLoan(loan);
 >>>>>>> c33c44839028203a4310b512ce3894dc5362864c
