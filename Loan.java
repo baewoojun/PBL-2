@@ -15,7 +15,7 @@ public class Loan
         this.loanedBook = b;
         this.borrower = u;
         b.setLoan(this);
-        u.setLoan(this);
+        u.set
         loanState =0;
     }
     
