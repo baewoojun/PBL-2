@@ -1,16 +1,16 @@
-import java.util.TreeSet;
+import java.util.*;
 /**
  * BookDB 클래스의 설명을 작성하세요.
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2022320014_정재헌, 2022320035_배우준, 20220320018_이성민)
+ * @version (2025.12.08)
  */
 public class BookDB
 {
     private TreeSet<Book> bookDB;
     private Book bookObject;
     public BookDB(){
-        bookDB = new TreeSet<>();
+         bookDB = new TreeSet<>();
         
     }
     
@@ -23,8 +23,11 @@ public class BookDB
         }
     }
     
+    public Iterator<Book> getIterator(){
+        return bookDB.iterator();
+    }
     public Book findBook(){
-    
+        return null;
     }
     
     public Book findBook(String UCNum){
