@@ -15,16 +15,16 @@ public class Loan
         this.loanedBook = b;
         this.borrower = u;
         b.setLoan(this);
-<<<<<<< HEAD
-        u.set;
-=======
-        u.set
->>>>>>> c33c44839028203a4310b512ce3894dc5362864c
-        loanState =0;
+        u.setLoan(this);
+    }
+    
+    public String getBookID(){
+        return loanedBook.getID();
     }
     
     public void unLinkLoan(){
         
     }
+    
     
 }

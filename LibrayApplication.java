@@ -22,27 +22,38 @@ public class LibrayApplication {
     
 
     public String registerOneBorrower(String name, String email){
-        if(findBorrower(name, email).eqauls()){
-            
+        Borrower Cborrower = borrowerCollection.findBorrower(name, email);
+        if(Cborrower == null){
+            Borrower borrower = new Borrower(name, email);
+            String saveIF = borrowerCollection.addBorrower(borrower);
+            return saveIF;
         }
-        Borrower borrower = new Borrower(name, email);
-        String saveIF = borrowerCollection.addBorrower(borrower);
-        return saveIF;
+        else{
+            return "이미 등록된 이용자 입니다.";
+        }
     }
 
     public String registerOneBook(String title, String author){
         String UCNum = createUCNum();
-        Book book = new Book(title, author, UCNum);
-        String saveIF = bookCollection.addBook(book);
-        return saveIF + UCNum;
+        Book Cbook = bookCollection.findBook(UCNum);
+        if(book == null){
+            Book book = new Book(title, author, UCNum);
+            String saveIF = bookCollection.addBook(book);
+            return saveIF + UCNum;
+        }
+        else{
+            return "이미 등록된 책입니다.";
+        }
     }
 
     public void displayBooksForLoan(){
         Iterator<Book> it = bookCollection.getIterator();
         
+
         System.out.println("===대출 가능 도서 목록 ==");
         while(bookit.hasNext()){
             Book book = (bookit.next());
+
             if(book.check() == true){
                 System.out.println(book.display());
             }
@@ -52,9 +63,11 @@ public class LibrayApplication {
     public void displayBooksOnLoan(){
         Iterator<Book> it = bookCollection.getIterator();
         
+
         System.out.println("===대출 중 도서 목록 ==");
         while(bookit.hasNext()){
             Book book = bookit.next();
+
             if(book.check() == false){
                 System.out.println(book.display());
             }
