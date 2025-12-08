@@ -71,18 +71,11 @@ public class LibrayApplication {
         if(borrower == null){
             return "해당 이용자를 찾을 수 없습니다";
         }
-        
-        
-<<<<<<< HEAD
-<<<<<<< HEAD
         Loan loan = new Loan(Book,Borrower);
         retun loanDB.addLoan(loan);
-=======
-=======
->>>>>>> c33c44839028203a4310b512ce3894dc5362864c
+
         Loan loan = new Loan(book,borrower);
         return loanDB.addLoan(loan);
->>>>>>> c33c44839028203a4310b512ce3894dc5362864c
     }
 
     public String returnOneBook(String UCNum,String name, String email){
