@@ -49,29 +49,27 @@ public class LibraryApplication {
     }
 
     public String displayBooksForLoan(){
-        StringBuilder sb = new StringBuilder();
+        String result = "=== 대출 가능 도서 목록 ===\n";
         Iterator<Book> it = bookCollection.getIterator();
-        sb.append("=== 대출 가능 도서 목록 ===\n");
-        while(it.hasNext()){
-            Book book = (it.next());
-            if(book.check() == true){
-                sb.append(book.display()).append("\n"); 
+        while (it.hasNext()) {
+            Book book = it.next();
+            if (book.check()) {
+                result = result + book.display() + "\n";
             }
         }
-        return sb.toString();
+        return result;
     }
 
     public String displayBooksOnLoan(){
-        StringBuilder sb = new StringBuilder(); 
+        String result = "=== 대출 중 도서 목록 ===\n";
         Iterator<Book> it = bookCollection.getIterator();
-        sb.append("=== 대출 중 도서 목록 ===\n");
-        while(it.hasNext()){
+        while (it.hasNext()) {
             Book book = it.next();
-            if(book.check() == false){
-                sb.append(book.display()).append("\n");
+            if (book.check()) {
+                result = result + book.display() + "\n";
             }
         }
-        return sb.toString();
+        return result;
     }
 
     public String lendOneBook(String UCNum,String name, String email){
