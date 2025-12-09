@@ -10,17 +10,11 @@ public class BookDB
     private TreeSet<Book> bookDB;
     private Book bookObject;
     public BookDB(){
-         bookDB = new TreeSet<>();
-        
+        bookDB = new TreeSet<>();
+
     }
-    
+
     public String addBook(Book b){
-        // if(bookDB.add(b)){
-            // return "책 등록이 완료되었습니다.";
-        // }
-        // else{
-            // return "이미 등록된 책입니다.";
-        // }
         Iterator<Book> it = bookDB.iterator();
         while(it.hasNext()){
             Book book = it.next();
@@ -29,16 +23,17 @@ public class BookDB
             }
         }
         bookDB.add(b);
-        return "책이 등록 완료 되었습니다.";
+        return "책이 등록 되었습니다.";
     }
-    
+
     public Iterator<Book> getIterator(){
         return bookDB.iterator();
     }
+
     public Book findBook(){
         return null;
     }
-    
+
     public Book findBook(String UCNum){
         Iterator<Book> it = bookDB.iterator();
         while(it.hasNext()){
@@ -49,8 +44,13 @@ public class BookDB
         }
         return null;
     }
-    
+
     public String deleteBook(Book b){
-    
+        if(bookDB.remove(b)){ 
+            return "책을 삭제 완료했습니다.";
+        }
+        else{
+            return "책을 삭제하지 못하였습니다";
+        }
     }
 }
