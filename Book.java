@@ -1,6 +1,6 @@
 
 /**
- * Book 클래스의 설명을 작성하세요.
+ * Book 객체를 생성하는 클래스
  *
  * @author (2022320014_정재헌, 2022320035_배우준, 20220320018_이성민)
  * @version (2025.12.10)
@@ -27,9 +27,21 @@ public class Book implements Comparable<Book>
             return false;
         }
     }
-
+    
     public String display(){
         return "제목 " + title + ", 저자: " + author + ", 번호: " + UCNum;
+    }
+    
+    public String delete(){
+        this.title = null;
+        this.author = null;
+        this.UCNum = null;
+        this.loan = null;
+        return "책 삭제를 완료 했습니다.";
+    }
+    
+    public void setLoan(Loan loan){
+        this.loan = loan;
     }
 
     public String getID(){
@@ -38,18 +50,6 @@ public class Book implements Comparable<Book>
 
     public Loan searchLoan(){
         return this.loan;
-    }
-
-    public String delete(){
-        this.title = null;
-        this.author = null;
-        this.UCNum = null;
-        this.loan = null;
-        return "책 삭제를 완료 했습니다.";
-    }
-
-    public void setLoan(Loan loan){
-        this.loan = loan;
     }
     
     public int compareTo(Book other) {
