@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * LibraryApplication 클래스의 설명을 작성하세요.
  *
@@ -147,22 +148,20 @@ public class LibraryApplication {
         if(borrower.searchLoan() != null){
             return "대출 중인 책이 있어 해당 이용자를 삭제 할 수 없습니다.";
         }
-        return borrowerCollection.deleteBorrower(borrower);
+        String deleteIF = borrowerCollection.deleteBorrower(borrower);
+        borrower.delete();
+        return deleteIF;
     }
 
     public String deleteOneBook(String title, String author, String UCNum){
-        Iterator<Book> it = bookCollection.getIterator();
-
-        while(it.hasNext()){
-            Book b = it.next();
-            if(b.getID().equals(UCNum)){
-                if(b.check()){
-                    return bookCollection.deleteBook(b);
-                }
-                return "대출 중인 책은 삭제할 수 없습니다.";
-            }
+        Book book = bookCollection.findBook(UCNum);
+        if(book == null){
+            return "등록되지 않은 책입니다.";
         }
-        return "해당 책을 찾을 수 없습니다.";
+        
+        String deleteIF = bookCollection.deleteBook(book);
+        book.delete();
+        return deleteIF;
     }
 }
 

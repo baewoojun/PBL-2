@@ -1,4 +1,4 @@
-import java.util.Arrays; // Arrays.fill() 사용을 위해 추가
+
 /**
  * Borrower 클래스의 설명을 작성하세요.
  *

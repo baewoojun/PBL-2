@@ -1,4 +1,3 @@
-import java.util.TreeSet;
 import java.util.*;
 
 /**
@@ -15,19 +14,13 @@ public class BorrowerDB{
     }
 
     public String addBorrower(Borrower u){
-        // if(borrowerDB.add(u)){
-        // return "?  ?  ?   ?  록이 ?  료되?  ?  ?  ?  .";
+        // Iterator<Borrower> it = borrowerDB.iterator();
+        // while(it.hasNext()){
+            // Borrower borrower = it.next();
+            // if(borrower.equals(u)){
+                // return "이미 등록된 이용자 입니다.";
+            // }
         // }
-        // else{
-        // return "?   ? ?  록된 ?  ?  ?   ?  ?  ?  .";
-        // }
-        Iterator<Borrower> it = borrowerDB.iterator();
-        while(it.hasNext()){
-            Borrower borrower = it.next();
-            if(borrower.equals(u)){
-                return "등록된 이용자가 없습니다.";
-            }
-        }
         borrowerDB.add(u);
         return "이용자가 정상적으로 등록되었습니다.";
     }

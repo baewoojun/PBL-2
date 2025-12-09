@@ -1,4 +1,4 @@
-import java.util.*;
+
 /**
  * Book 클래스의 설명을 작성하세요.
  *
@@ -41,6 +41,9 @@ public class Book implements Comparable<Book>
     }
 
     public void delete(){
+        this.title = null;
+        this.author = null;
+        this.UCNum = null;
         this.loan = null;
     }
 

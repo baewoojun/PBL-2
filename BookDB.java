@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * BookDB 클래스의 설명을 작성하세요.
  *
@@ -15,13 +16,13 @@ public class BookDB
     }
 
     public String addBook(Book b){
-        Iterator<Book> it = bookDB.iterator();
-        while(it.hasNext()){
-            Book book = it.next();
-            if(book.equals(b)){
-                return "이미 등록된 책입니다.";
-            }
-        }
+        // Iterator<Book> it = bookDB.iterator();
+        // while(it.hasNext()){
+            // Book book = it.next();
+            // if(book.equals(b)){
+                // return "이미 등록된 책입니다.";
+            // }
+        // }
         bookDB.add(b);
         return "책이 등록 되었습니다.";
     }
