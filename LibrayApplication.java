@@ -53,7 +53,6 @@ public class LibrayApplication {
         System.out.println("===대출 가능 도서 목록 ==");
         while(bookit.hasNext()){
             Book book = (bookit.next());
-
             if(book.check() == true){
                 System.out.println(book.display());
             }
@@ -62,12 +61,9 @@ public class LibrayApplication {
 
     public void displayBooksOnLoan(){
         Iterator<Book> it = bookCollection.getIterator();
-        
-
         System.out.println("===대출 중 도서 목록 ==");
         while(bookit.hasNext()){
             Book book = bookit.next();
-
             if(book.check() == false){
                 System.out.println(book.display());
             }
@@ -86,7 +82,7 @@ public class LibrayApplication {
         }
         Loan loan = new Loan(Book,Borrower);
         retun loanDB.addLoan(loan);
-
+        
         Loan loan = new Loan(book,borrower);
         return loanDB.addLoan(loan);
     }
