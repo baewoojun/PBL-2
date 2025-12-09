@@ -1,4 +1,4 @@
-
+import java.util.Arrays; // Arrays.fill() 사용을 위해 추가
 /**
  * Borrower 클래스의 설명을 작성하세요.
  *
@@ -25,6 +25,15 @@ public class Borrower implements Comparable<Borrower>
         }
     }
     
+    public Loan searchLoan(){
+        for (Loan loan : loanInfo) {
+            if (loan != null) {
+                return loan;
+            }
+        }
+        return null;
+    }
+    
     public Loan searchLoan(String bookID){
         for (Loan loan : loanInfo) {
             if (loan != null && loan.getBookID().equals(bookID)) {
@@ -33,7 +42,7 @@ public class Borrower implements Comparable<Borrower>
         }
         return null;
     }
-    //클래스 다이어그램에 추가
+    
     public String getID(){
         return this.email;
     }
@@ -46,15 +55,25 @@ public class Borrower implements Comparable<Borrower>
             }
         }
     }
-        
-    public void delete(Loan loan){
-        for(int i = 0; i < loanInfo.length; i++){
-            if (loanInfo[i].equals(loan)){
-                loanInfo[i] = null;
-                return;
-            }
-        }
+
+    // public void deleteLoan(Loan loan){
+        // for(int i = 0; i < loanInfo.length; i++){
+            // if (loanInfo[i] != null && loanInfo[i].equals(loan)){
+                // loanInfo[i] = null;
+                // return;
+            // }
+        // }
+    // }
+    
+    public void delete(){
+        this.name = null;
+        this.email = null;
+        this.loanInfo = null;
     }
+    
+    // public void deleteLoan(){
+        // Arrays.fill(loanInfo, null);
+    // }
     
     public int compareTo(Borrower other) {
         return this.email.compareTo(other.email);

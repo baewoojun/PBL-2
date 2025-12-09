@@ -12,32 +12,43 @@ public class BorrowerDB{
     private Borrower borrowerObject;
     public BorrowerDB(){
         borrowerDB = new TreeSet<>();
-        
     }
-    
+
     public String addBorrower(Borrower u){
         // if(borrowerDB.add(u)){
-            // return "이용자 등록이 완료되었습니다.";
+        // return "?  ?  ?   ?  록이 ?  료되?  ?  ?  ?  .";
         // }
         // else{
-            // return "이미 등록된 사용자 입니다.";
+        // return "?   ? ?  록된 ?  ?  ?   ?  ?  ?  .";
         // }
         Iterator<Borrower> it = borrowerDB.iterator();
         while(it.hasNext()){
             Borrower borrower = it.next();
             if(borrower.equals(u)){
-                return "이미 등록된 이용자입니다.";
+                return "등록된 이용자가 없습니다.";
             }
         }
         borrowerDB.add(u);
-        return "이용자가 등록 완료 되었습니다.";
+        return "이용자가 정상적으로 등록되었습니다.";
     }
-    
-    public Book findBorrower(String name, String email){
-        
+
+    public Borrower findBorrower(String name, String email){ 
+        Iterator<Borrower> it = borrowerDB.iterator();
+        while(it.hasNext()){
+            Borrower borrower = it.next();
+            if(borrower.getID().equals(email)){ 
+                return borrower;
+            }
+        }
+        return null;
     }
-    
+
     public String deleteBorrower(Borrower u){
-        
+        if(borrowerDB.remove(u)){
+            return "이용자 정보가 삭제 되었습니다";
+        }
+        else{
+            return "삭제 실패 : 해당 이용자가 없습니다";
+        }
     }
 }
