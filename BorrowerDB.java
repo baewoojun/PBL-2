@@ -36,12 +36,7 @@ public class BorrowerDB{
         return null;
     }
 
-    public String deleteBorrower(Borrower u){
-        if(borrowerDB.remove(u)){
-            return "이용자 정보가 삭제 되었습니다";
-        }
-        else{
-            return "삭제 실패 : 해당 이용자가 없습니다";
-        }
+    public void deleteBorrower(Borrower u){
+        borrowerDB.remove(u);
     }
 }

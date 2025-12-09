@@ -46,12 +46,7 @@ public class BookDB
         return null;
     }
 
-    public String deleteBook(Book b){
-        if(bookDB.remove(b)){ 
-            return "책을 삭제 완료했습니다.";
-        }
-        else{
-            return "책을 삭제하지 못하였습니다";
-        }
+    public void deleteBook(Book b){
+        bookDB.remove(b);
     }
 }

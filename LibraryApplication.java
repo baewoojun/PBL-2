@@ -146,8 +146,9 @@ public class LibraryApplication {
         if(borrower.searchLoan() != null){
             return "대출 중인 책이 있어 해당 이용자를 삭제 할 수 없습니다.";
         }
-        String deleteIF = borrowerCollection.deleteBorrower(borrower);
-        borrower.delete();
+        
+        borrowerCollection.deleteBorrower(borrower);
+        String deleteIF = borrower.delete();
         return deleteIF;
     }
 
@@ -157,8 +158,8 @@ public class LibraryApplication {
             return "등록되지 않은 책입니다.";
         }
         
-        String deleteIF = bookCollection.deleteBook(book);
-        book.delete();
+        bookCollection.deleteBook(book);
+        String deleteIF = book.delete();
         return deleteIF;
     }
 }

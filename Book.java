@@ -40,29 +40,19 @@ public class Book implements Comparable<Book>
         return this.loan;
     }
 
-    public void delete(){
+    public String delete(){
         this.title = null;
         this.author = null;
         this.UCNum = null;
         this.loan = null;
+        return "책 삭제를 완료 했습니다.";
     }
 
     public void setLoan(Loan loan){
         this.loan = loan;
     }
-
-    // public String getTitle() {
-        // return this.title;
-    // }
-
-    // public String getAuthor() {
-        // return this.author;
-    // }
-
+    
     public int compareTo(Book other) {
         return this.UCNum.compareTo(other.UCNum);
     }
-    // public int compareTo(Book book1){
-    // return Integer.parseInt(this.UCNum) - Integer.parseInt(book1.UCNum);
-    // }
 }

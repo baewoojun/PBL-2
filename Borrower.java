@@ -51,29 +51,24 @@ public class Borrower implements Comparable<Borrower>
         for(int i = 0; i < loanInfo.length; i++){
             if (loanInfo[i] == null){
                 loanInfo[i] = loan;
-                return;
             }
         }
     }
-
-    // public void deleteLoan(Loan loan){
-        // for(int i = 0; i < loanInfo.length; i++){
-            // if (loanInfo[i] != null && loanInfo[i].equals(loan)){
-                // loanInfo[i] = null;
-                // return;
-            // }
-        // }
-    // }
     
-    public void delete(){
+    public void unLinkLoan(Loan loan){
+        for(int i = 0; i < loanInfo.length; i++){
+            if (loanInfo[i].equals(loan)){
+                loanInfo[i] = null;
+            }
+        }
+    }
+    
+    public String delete(){
         this.name = null;
         this.email = null;
         this.loanInfo = null;
+        return "이용자 삭제를 완료 했습니다.";
     }
-    
-    // public void deleteLoan(){
-        // Arrays.fill(loanInfo, null);
-    // }
     
     public int compareTo(Borrower other) {
         return this.email.compareTo(other.email);

@@ -9,15 +9,13 @@ public class Loan
 {
     private Book loanedBook;
     private Borrower borrower;
-    public static int loanState = 1;
+    
     public Loan(Book b, Borrower u){
         this.loanedBook = b;
         this.borrower = u;
         
         b.setLoan(this);
         u.setLoan(this);
-        
-        loanState = 1;
     }
     
     public String getBookID(){
@@ -26,7 +24,7 @@ public class Loan
     
     public void unLinkLoan(){
         loanedBook.setLoan(null);
-        borrower.setLoan(this);
+        borrower.unLinkLoan(this);
         this.loanedBook = null;
         this.borrower = null;
     }
